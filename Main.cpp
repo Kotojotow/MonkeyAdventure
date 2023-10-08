@@ -3,8 +3,6 @@
 
 int main(void) {
 	Cgame game(1000, 1000);
-	while (!game.exit) {
-		game.mainLoop();
-	}
+	game.mainLoop();
 	return 0;
 }

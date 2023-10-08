@@ -4,16 +4,15 @@
 class Cgame
 {
 public:
-	bool exit = 0;
 
 	Cgame(int,int);
 	void mainLoop();
 private:
-	int input;
+	int input1;
+	int input2;
 
-	void showScreen();
+	void getInput();
 	void cmdAdjust(int, int);
-	void exitGame();
 };
 
 #endif

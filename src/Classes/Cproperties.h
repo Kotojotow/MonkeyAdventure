@@ -4,14 +4,13 @@
 class Cproperties {
 public:
 	Cproperties();
-	int actualScreen();
 	int actualMenuIndex();
-	void changeScreen(int);
-	void indexReset();
+	int actualBorder();
+	void indexReset(int);
 	void indexUp();
 	void indexDown();
 private:
-	int Screen;
 	int MenuIndex;
+	int border;
 };
 #endif

@@ -24,6 +24,7 @@
     <ProjectGuid>{8289bb78-c8de-4a78-9817-111a495604b2}</ProjectGuid>
     <RootNamespace>MonkeyA</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>MonkeyAdventure</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -127,16 +128,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Classes\Cview.cpp" />
     <ClCompile Include="src\Cgame.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="src\Classes\Cproperties.cpp" />
     <ClCompile Include="src\Classes\Cproperties.h" />
-    <ClCompile Include="src\Functions\views.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Classes\Cview.h" />
     <ClInclude Include="src\Cgame.h" />
-    <ClInclude Include="src\Functions\views.h" />
-    <ClInclude Include="src\objects.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

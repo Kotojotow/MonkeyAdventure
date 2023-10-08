@@ -1,23 +1,19 @@
 #include "Cproperties.h"
 
 Cproperties::Cproperties() {
-	Screen = 0;
-	MenuIndex = 0;
+	indexReset(4);
 }
 
-int Cproperties::actualScreen() {
-	return Screen;
-}
-
-void Cproperties::changeScreen(int newScreen) {
-	Screen = newScreen;
-}
 int Cproperties::actualMenuIndex() {
 	return MenuIndex;
 }
+int Cproperties::actualBorder() {
+	return border;
+}
 
-void Cproperties::indexReset() {
+void Cproperties::indexReset(int bord) {
 	MenuIndex = 0;
+	border = bord;
 }
 void Cproperties::indexUp() {
 	MenuIndex++;
