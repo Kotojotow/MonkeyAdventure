@@ -128,6 +128,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Classes\CgeneratorAtt.cpp" />
     <ClCompile Include="src\Classes\Cview.cpp" />
     <ClCompile Include="src\Cgame.cpp" />
     <ClCompile Include="Main.cpp" />
@@ -135,6 +136,7 @@
     <ClCompile Include="src\Classes\Cproperties.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Classes\CgeneratorAtt.h" />
     <ClInclude Include="src\Classes\Cview.h" />
     <ClInclude Include="src\Cgame.h" />
   </ItemGroup>

@@ -25,16 +25,14 @@ bool Cview::showScreen(int input1, int input2) {
 	switch (screen) {
 	case MAINMENU: { 
 		cout << "Monkey Adventure!\n\n";
-		showMenuScreen(index.actualMenuIndex(),MenuOptions, index.actualBorder());
 		break;
 	}
 	case EXITMENU: {
 		cout << "Do you really want exit game?\n\n";
-		showMenuScreen(index.actualMenuIndex(), MenuOptions, index.actualBorder());
 		break;
 	}
 	}
-
+	showMenuScreen(index.actualMenuIndex(), MenuOptions, index.actualBorder());
 	cout << endl<<input1 << endl << input2 << endl << screen << endl << index.actualMenuIndex() << endl << index.actualBorder();
 
 	return exit;
@@ -122,6 +120,11 @@ void Cview::options(int scr) {
 	}  
 	case EXITMENU: {
 		MenuOptions[0] = "Yes\n";
+		MenuOptions[1] = "No\n";
+		break;
+	}
+	case NEWGAMEMENU: {
+		MenuOptions[0] = "Seed: ";
 		MenuOptions[1] = "No\n";
 		break;
 	}
