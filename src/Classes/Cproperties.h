@@ -6,7 +6,7 @@ public:
 	Cproperties();
 	int actualMenuIndex();
 	int actualBorder();
-	void indexReset(int);
+	void indexReset(int,int);
 	void indexUp();
 	void indexDown();
 private:

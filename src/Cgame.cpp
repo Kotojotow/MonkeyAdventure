@@ -6,7 +6,6 @@
 #include "Classes/Cview.h"
 
 
-
 Cview screen;
 
 Cgame::Cgame(int width, int height) {
@@ -18,7 +17,7 @@ Cgame::Cgame(int width, int height) {
 void Cgame::mainLoop() {
 	while (1) {
 		system("cls");
-		if (!screen.showScreen(input1, input2)) break;
+		if (screen.showScreen(input1, input2)) break;
 		getInput();
 	}
 }

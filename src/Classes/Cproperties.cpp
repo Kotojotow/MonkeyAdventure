@@ -1,7 +1,7 @@
 #include "Cproperties.h"
 
 Cproperties::Cproperties() {
-	indexReset(4);
+	indexReset(0,4);
 }
 
 int Cproperties::actualMenuIndex() {
@@ -11,8 +11,8 @@ int Cproperties::actualBorder() {
 	return border;
 }
 
-void Cproperties::indexReset(int bord) {
-	MenuIndex = 0;
+void Cproperties::indexReset(int index,int bord) {
+	MenuIndex = index;
 	border = bord;
 }
 void Cproperties::indexUp() {
