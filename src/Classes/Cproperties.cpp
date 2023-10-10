@@ -16,8 +16,10 @@ void Cproperties::indexReset(int index,int bord) {
 	border = bord;
 }
 void Cproperties::indexUp() {
-	MenuIndex++;
+	if(MenuIndex < border - 1)
+		MenuIndex++;
 }
 void Cproperties::indexDown() {
-	MenuIndex--;
+	if(MenuIndex > 0)
+		MenuIndex--;
 }
