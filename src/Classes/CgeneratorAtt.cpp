@@ -1,12 +1,14 @@
-#include <cstdlib>
+#include <random>
 #include <iostream>
 #include <string>
 #include "CgeneratorAtt.h"
 
 #define MINSEED -2000000
-#define MAXSEED (MINSEED * 2)
+#define MAXSEED (MINSEED * -2)
 #define MAXDIFF 2
 #define MAXSIZE 2
+
+using namespace std;
 
 CgeneratorAtt::CgeneratorAtt() {
 	seed = seedGenerator();
@@ -14,11 +16,11 @@ CgeneratorAtt::CgeneratorAtt() {
 	size = 0;
 }
 
-std::string CgeneratorAtt::showSeed() {
-	std::string convert = std::to_string(seed);
+string CgeneratorAtt::showSeed() {
+	string convert = to_string(seed);
 	return convert + "\n";
 }
-std::string CgeneratorAtt::showDifficulty() {
+string CgeneratorAtt::showDifficulty() {
 	switch (difficulty)
 	{
 		case 0:return "Easy\n";
@@ -27,7 +29,7 @@ std::string CgeneratorAtt::showDifficulty() {
 		default:return "Something Wrong\n";
 	}
 }
-std::string CgeneratorAtt::showSize() {
+string CgeneratorAtt::showSize() {
 	switch (size)
 	{
 	case 0:return "Small\n";
@@ -38,12 +40,16 @@ std::string CgeneratorAtt::showSize() {
 }
 
 int  CgeneratorAtt::seedGenerator() {
-	return (std::rand() % MAXSEED) - MINSEED;
+	int a,b;
+	random_device rd;
+	mt19937 generator(rd());
+	uniform_int_distribution<int> distribution(MINSEED, MAXSEED);
+	return distribution(generator);
 }
 void  CgeneratorAtt::seedSet() {
 	int seedNumber;
-	std::cout << "/n/nSeed: ";
-	std::cin >> seedNumber;
+	cout << "/n/nSeed: ";
+	cin >> seedNumber;
 	if (seedNumber > MINSEED && seedNumber < MAXSEED)
 		seed = seedNumber;
 }
