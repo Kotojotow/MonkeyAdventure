@@ -2,11 +2,7 @@
 #include <iostream>
 #include <string>
 #include "CgeneratorAtt.h"
-
-#define MINSEED -2000000
-#define MAXSEED (MINSEED * -2)
-#define MAXDIFF 2
-#define MAXSIZE 2
+#include "melib.h"
 
 using namespace std;
 
@@ -40,7 +36,6 @@ string CgeneratorAtt::showSize() {
 }
 
 int  CgeneratorAtt::seedGenerator() {
-	int a,b;
 	random_device rd;
 	mt19937 generator(rd());
 	uniform_int_distribution<int> distribution(MINSEED, MAXSEED);
@@ -49,6 +44,9 @@ int  CgeneratorAtt::seedGenerator() {
 void  CgeneratorAtt::seedSet() {
 	int seedNumber;
 	cout << "/n/nSeed: ";
+	do {
+		break;
+	} while (1);
 	cin >> seedNumber;
 	if (seedNumber > MINSEED && seedNumber < MAXSEED)
 		seed = seedNumber;

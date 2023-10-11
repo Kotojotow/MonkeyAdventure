@@ -16,7 +16,6 @@ private:
 	void showMenuScreen(int,std::string*,int);
 	int menuButtons(int,int);
 	void action(int, int);
-	void animate(std::string);
 	void options(int);
 };
 
