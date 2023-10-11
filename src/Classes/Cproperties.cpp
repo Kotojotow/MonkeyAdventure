@@ -1,7 +1,7 @@
 #include "Cproperties.h"
 
 Cproperties::Cproperties() {
-	indexReset(0,4);
+	indexReset(1,5);
 }
 
 int Cproperties::actualMenuIndex() {
@@ -20,6 +20,6 @@ void Cproperties::indexUp() {
 		MenuIndex++;
 }
 void Cproperties::indexDown() {
-	if(MenuIndex > 0)
+	if(MenuIndex > 1)
 		MenuIndex--;
 }

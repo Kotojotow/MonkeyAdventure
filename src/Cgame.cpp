@@ -12,6 +12,7 @@ Cgame::Cgame(int width, int height) {
 	cmdAdjust(width, height);
 	input1 = 0;
 	input2 = 0;
+	mainLoop();
 }
 
 void Cgame::mainLoop() {
@@ -28,9 +29,10 @@ void Cgame::getInput() {
 		input2 = _getch();
 }
 void Cgame::cmdAdjust(int width,int height) {
-	HWND console = GetConsoleWindow();
-	RECT rect;
-	GetWindowRect(console, &rect);
+	system("mode con: cols=50 lines=20");
+	//HWND console = GetConsoleWindow();
+	//RECT rect;
+	///GetWindowRect(console, &rect);
 
-	MoveWindow(console, rect.left, rect.top, width, height, TRUE);
+	//MoveWindow(console, rect.left, rect.top, width, height, TRUE);
 }

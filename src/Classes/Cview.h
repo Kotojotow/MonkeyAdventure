@@ -7,14 +7,13 @@ class Cview
 public:
 	Cview();
 	~Cview();
-	bool showScreen(int, int);
+	int showScreen(int, int);
 private:
 	int screen;
 	bool exit;
 	std::string *MenuOptions;
 
 	void showMenuScreen(int,std::string*,int);
-	int menuButtons(int,int);
 	void action(int, int);
 	void options(int);
 };

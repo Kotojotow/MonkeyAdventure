@@ -1,10 +1,8 @@
-#include <iostream>
-#include <ctime>
+#include <windows.h>
+#include <string>
 #include "src/Cgame.h"
-#include <cstdlib>
 
 int main(int argc, char* argv[]) {
-	Cgame game(1000, 1000);
-	game.mainLoop();
+	Cgame game(10, 10);
 	return 0;
 }

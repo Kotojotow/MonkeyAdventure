@@ -37,3 +37,25 @@ int dynamicInputINT(string syntax,string describe, int number, int max) {
 		}
 	}
 }
+
+int menuButtons(int input1, int input2) {
+	if (input1 == K_ENTER) return K_ENTER;
+	if (input1 == K_ESC) return K_ESC;
+	if (input1 == K_SPACE) return K_SPACE;
+	if (input1 == K_BACKSPACE) return K_BACKSPACE;
+	if (input1 == K_ARROWS) {
+		if (input2 == K_DOWN) {
+			return K_DOWN;
+		}
+		if (input2 == K_UP) {
+			return K_UP;
+		}
+		if (input2 == K_LEFT) {
+			return K_LEFT;
+		}
+		if (input2 == K_RIGHT) {
+			return K_RIGHT;
+		}
+	}
+	return 0;
+}
