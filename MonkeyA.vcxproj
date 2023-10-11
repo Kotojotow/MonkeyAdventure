@@ -134,13 +134,13 @@
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="src\Classes\Cproperties.cpp" />
     <ClCompile Include="src\Classes\Cproperties.h" />
-    <ClCompile Include="src\Classes\melib.cpp" />
+    <ClCompile Include="src\Classes\Functions\melib.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Classes\CgeneratorAtt.h" />
     <ClInclude Include="src\Classes\Cview.h" />
     <ClInclude Include="src\Cgame.h" />
-    <ClInclude Include="src\Classes\melib.h" />
+    <ClInclude Include="src\Classes\Functions\melib.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

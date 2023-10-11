@@ -33,7 +33,7 @@
     <ClCompile Include="src\Classes\CgeneratorAtt.cpp">
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
-    <ClCompile Include="src\Classes\melib.cpp">
+    <ClCompile Include="src\Classes\Functions\melib.cpp">
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
   </ItemGroup>
@@ -47,7 +47,7 @@
     <ClInclude Include="src\Classes\CgeneratorAtt.h">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
-    <ClInclude Include="src\Classes\melib.h">
+    <ClInclude Include="src\Classes\Functions\melib.h">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
   </ItemGroup>
