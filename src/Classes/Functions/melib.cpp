@@ -12,37 +12,30 @@ void animateString(string sentence) {
 	}
 }
 
-int dynamicInputINT(string syntax,string describe, int number, int max) {
+int dynamicInputINT( int number, int key) {
 	string input = to_string(number);
-	int key = 0;
-	while (1) {
-		bool minus = false;
-		if (input[0] == '-')
-			minus = true;
-		system("cls");
-		cout << describe << endl << endl << syntax << ": " << input;
-		key = _getch();
-		if (key == '-' && input.length() == 0) {
-			input.push_back(key);
-		}
-		if (key == K_BACKSPACE && input.length() > 0) {
-			input.pop_back();
-		}
-		if (key >= 48 && key <= 57 && input.length() - minus <max) {
-			input.push_back(key);
-		}
-		if (key == K_ENTER || key==K_ESC) {
-			system("cls");
-			return stoi(input);
-		}
+	if (key == 45) {
+		return stoi(input) * -1;
 	}
+	if (key == K_BACKSPACE && input.length() > 0) {
+		input.pop_back();
+		if(input[0] == '-' && input.length() == 1)
+			input.pop_back();
+	}
+	if (key >= 48 && key <= 57) {
+		input.push_back(key);
+	}
+	if (input.length() == 0)
+		return 0;
+	else
+		return stoi(input);
 }
 
-int menuButtons(int input1, int input2) {
-	if (input1 == K_ENTER) return K_ENTER;
-	if (input1 == K_ESC) return K_ESC;
-	if (input1 == K_SPACE) return K_SPACE;
-	if (input1 == K_BACKSPACE) return K_BACKSPACE;
+int keyInput() {
+	int input1 = _getch();
+	int input2;
+	if (input1 == 224)
+		input2 = _getch();
 	if (input1 == K_ARROWS) {
 		if (input2 == K_DOWN) {
 			return K_DOWN;
@@ -57,5 +50,10 @@ int menuButtons(int input1, int input2) {
 			return K_RIGHT;
 		}
 	}
-	return 0;
+	return input1;
+}
+void cmdAdjust(int width, int height) {
+	string command = "mode con: cols=" + to_string(width) + " lines=" + to_string(height);
+	const char* cstr = command.c_str();
+	system(cstr);
 }

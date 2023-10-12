@@ -3,27 +3,29 @@
 #include "Cview.h"
 #include "Cproperties.h"
 #include "CgeneratorAtt.h"
-#include "functions/melib.h"
+#include "../functions/melib.h"
 
 using namespace std;
-Cproperties index;
-CgeneratorAtt att;
 
-Cview::Cview() {
+
+Cview::Cview(int width,int height) {
+	cmdAdjust(width, height);
 	screen = 1;
 	MenuOptions = new string[MENUSIZE];
-	exit = false;
+	exit = true;
 }
 
-int Cview::showScreen(int input1, int input2) {
-	int buttonReturn = menuButtons(input1, input2);
-	action(screen, buttonReturn);
-
-	options(screen);
-	showMenuScreen(index.actualMenuIndex(), MenuOptions, index.actualBorder());
-	cout << endl<<input1 << endl << input2 << endl << screen << endl << index.actualMenuIndex() << endl << index.actualBorder();
-
-	return exit;
+int Cview::showScreen() {
+	int buttonReturn = 0;
+	while (exit == 1) {
+		options(screen);
+		showMenuScreen(index.actualMenuIndex(), MenuOptions, index.actualBorder());
+		cout << endl << buttonReturn << endl << screen << endl << index.actualMenuIndex() << endl << index.actualBorder();
+		buttonReturn = keyInput();
+		action(screen, buttonReturn);
+		system("cls");
+	}
+	return 0;
 }
 
 void Cview::showMenuScreen(int menuIndex, string* opt, int optionsAmount) {
@@ -59,10 +61,11 @@ void Cview::action(int scr, int act) {
 		}
 	}
 	if (scr == NEWGAMEMENU) {////////////////////
+		if(index.actualMenuIndex() == 2) att.seedSet(act);
 		if (act == K_ENTER) {
 			switch (index.actualMenuIndex()) {
 			case 1:break;
-			case 2:att.seedSet(); break;
+			case 2:att.seedGenerator(); break;
 			case 3:att.difficultyUP(); break;
 			case 4:att.sizeUP(); break;
 			case 5:att.ironManchange(); break;
@@ -91,7 +94,7 @@ void Cview::action(int scr, int act) {
 	if (scr == EXITMENU) {/////////////////////
 		if (act == K_ENTER) {
 			switch (index.actualMenuIndex()) {
-			case 1: exit = true; break;
+			case 1: exit = 0; break;
 			case 2: screen = MAINMENU; index.indexReset(4, MAINMENUSIZE); break;
 			}
 		}
@@ -101,57 +104,10 @@ void Cview::action(int scr, int act) {
 	}
 }
 
-
-
-void Cview::options(int scr) {
-	
-	switch (scr)
-	{
-	case MAINMENU: {
-		MenuOptions[0] = "Monkey Adventure!\n\n";
-		MenuOptions[1] = "New Game\n";
-		MenuOptions[2] = "Load Save\n";
-		MenuOptions[3] = "Settings\n";
-		MenuOptions[4] = "Quit\n";
-		break;
-	}  
-	case NEWGAMEMENU: {
-		MenuOptions[0] = "Begin new game\n\n";
-		MenuOptions[1] = "Start Game\n\n";
-		MenuOptions[2] = "Seed: " + att.showSeed();
-		MenuOptions[3] = "Difficulty: " + att.showDifficulty();
-		MenuOptions[4] = "Size of world: " + att.showSize();
-		MenuOptions[5] = "Ironman: " + att.showIronMan() + "\n";
-		MenuOptions[6] = "Back to menu\n";
-		break;
-	}
-	case LOADMENU: {
-		MenuOptions[0] = "Load Game\n\n";
-		MenuOptions[1] = "";
-		MenuOptions[2] = "";
-		MenuOptions[3] = "";
-		MenuOptions[4] = "";
-		MenuOptions[5] = "";
-		break;
-	}
-	case OPTIONSMENU:{
-		MenuOptions[0] = "Options\n\n";
-		MenuOptions[1] = "";
-		MenuOptions[2] = "";
-		MenuOptions[3] = "";
-		MenuOptions[4] = "";
-		MenuOptions[5] = "";
-		break;
-	}
-	case EXITMENU: {
-		MenuOptions[0] = "Do you really want exit game?\n\n";
-		MenuOptions[1] = "Yes\n";
-		MenuOptions[2] = "No\n";
-		break;
-	}
-	}
+int Cview::nextMode() {
+	return exit;
 }
 
 Cview::~Cview() {
-	delete[] MenuOptions;
+	delete MenuOptions;
 }

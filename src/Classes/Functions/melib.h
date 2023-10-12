@@ -13,7 +13,7 @@
 #define K_RIGHT 77
 //LEVEL GENERATOR
 #define MINSEED -2000000
-#define MAXSEED (MINSEED * -2)
+#define MAXSEED (MINSEED * -1)
 #define MAXDIFF 2
 #define MAXSIZE 2
 //MENU
@@ -28,17 +28,28 @@
 #define OPTIONSMENUSIZE 5
 #define EXITMENU 40
 #define EXITMENUSIZE 3
-
-void animateString(std::string);
+/**
+ * Show off animate string on screen
+ * @param animate String wnich you want animate.
+ */
+void animateString(std::string animate);
 /**
  * Turn on dynamic type of number
  *
- * @param syntax Label.
- * @param describe for example (minimum value 20).
  * @param number Initial Value.
- * @param max Maximum number of digit to type
+ * @param input Key provided
  * @return Return changed number.
  */
-int dynamicInputINT(std::string syntax,std::string describe, int number, int max);
-int menuButtons(int, int);
+int dynamicInputINT(int number, int key);
+/**
+*Take a input from keyboard
+* @return Return value of provided key.
+*/
+int keyInput();
+/**
+* Change size of command window (need administrator permision to do that)
+* @param width in characters
+* @param height in characters
+*/
+void cmdAdjust(int width, int height);
 #endif // !MELIB_H

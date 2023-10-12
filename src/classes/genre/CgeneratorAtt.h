@@ -14,7 +14,7 @@ public:
 	std::string showDifficulty();
 	std::string showSize();
 	std::string showIronMan();
-	void seedSet();
+	void seedSet(int);
 	void ironManchange();
 	void difficultyUP();
 	void difficultyDOWN();
