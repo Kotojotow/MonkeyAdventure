@@ -13,15 +13,15 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Mapa">
+      <UniqueIdentifier>{e702c4b9-39c3-4335-9d62-f9495a5eb20d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
     <ClCompile Include="src\classes\genre\Cview.cpp">
-      <Filter>Pliki źródłowe</Filter>
-    </ClCompile>
-    <ClCompile Include="src\classes\genre\CgeneratorAtt.cpp">
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
     <ClCompile Include="src\Classes\Functions\melib.cpp">
@@ -39,12 +39,21 @@
     <ClCompile Include="src\classes\genre\Cproperties.cpp">
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
+    <ClCompile Include="src\classes\_Block.cpp">
+      <Filter>Mapa</Filter>
+    </ClCompile>
+    <ClCompile Include="src\classes\Module.cpp">
+      <Filter>Mapa</Filter>
+    </ClCompile>
+    <ClCompile Include="src\classes\Map.cpp">
+      <Filter>Mapa</Filter>
+    </ClCompile>
+    <ClCompile Include="src\classes\genre\CgeneratorAtt.cpp">
+      <Filter>Mapa</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\classes\genre\Cview.h">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
-    <ClInclude Include="src\classes\genre\CgeneratorAtt.h">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
     <ClInclude Include="src\Classes\Functions\melib.h">
@@ -58,6 +67,12 @@
     </ClInclude>
     <ClInclude Include="src\classes\CviewMenu.h">
       <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="src\classes\Map.h">
+      <Filter>Mapa</Filter>
+    </ClInclude>
+    <ClInclude Include="src\classes\genre\CgeneratorAtt.h">
+      <Filter>Mapa</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

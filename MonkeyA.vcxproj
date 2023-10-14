@@ -132,6 +132,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\classes\Map.cpp" />
     <ClCompile Include="src\classes\CviewMenu.cpp" />
     <ClCompile Include="src\classes\CviewInGame.cpp" />
     <ClCompile Include="src\classes\genre\CgeneratorAtt.cpp" />
@@ -140,8 +141,11 @@
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="src\classes\genre\Cproperties.h" />
     <ClCompile Include="src\Classes\Functions\melib.cpp" />
+    <ClCompile Include="src\classes\Module.cpp" />
+    <ClCompile Include="src\classes\_Block.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\classes\Map.h" />
     <ClInclude Include="src\classes\CviewMenu.h" />
     <ClInclude Include="src\classes\CviewInGame.h" />
     <ClInclude Include="resource.h" />

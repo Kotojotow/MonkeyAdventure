@@ -18,10 +18,10 @@ void CviewInGame::options(int scr) {
 	case NEWGAMEMENU: {
 		MenuOptions[0] = "Begin new game\n\n";
 		MenuOptions[1] = "Start Game\n\n";
-		MenuOptions[2] = "Seed: " + att.showSeed();
-		MenuOptions[3] = "Difficulty: " + att.showDifficulty();
-		MenuOptions[4] = "Size of world: " + att.showSize();
-		MenuOptions[5] = "Ironman: " + att.showIronMan() + "\n";
+		MenuOptions[2] = "Seed: ";
+		MenuOptions[3] = "Difficulty: ";
+		MenuOptions[4] = "Size of world: ";
+		MenuOptions[5] = "Ironman: ";
 		MenuOptions[6] = "Back to menu\n";
 		break;
 	}
@@ -50,4 +50,49 @@ void CviewInGame::options(int scr) {
 		break;
 	}
 	}
+}
+
+void CviewInGame::action(int scr, int act) {
+	/*
+	if (act == K_DOWN) {
+		index.indexDown();
+		return;
+	}
+	if (act == K_UP) {
+		index.indexUp();
+		return;
+	}
+	if (scr == MAINMENU) {/////////////////////
+		if (act == K_ENTER) {
+			screen = 10 * index.actualMenuIndex();
+			switch (index.actualMenuIndex()) {
+			}
+		}
+		if (act == K_ESC) {
+			screen = EXITMENU; index.indexReset(1, EXITMENUSIZE);
+		}
+	}
+	if (scr == NEWGAMEMENU) {////////////////////
+		if (act == K_ENTER) {
+			switch (index.actualMenuIndex()) {
+			}
+		}
+		if (act == K_LEFT) {
+			switch (index.actualMenuIndex()) {
+			}
+		}
+		if (act == K_RIGHT) {
+			switch (index.actualMenuIndex()) {
+			}
+		}
+		if (act == K_ESC) {
+		}
+	}
+
+	if (scr == EXITMENU) {/////////////////////
+		if (act == K_ENTER) {
+			}
+		if (act == K_ESC) {
+		}
+	}*/
 }

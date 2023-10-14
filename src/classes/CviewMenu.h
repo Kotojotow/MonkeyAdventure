@@ -1,4 +1,6 @@
-#pragma once
+#ifndef CVIEWMENU_H
+#define CVIEWMENU_H
+
 #include "genre/Cview.h"
 
 class CviewMenu : public Cview{
@@ -7,5 +9,9 @@ public:
 		return;
 	};
 	void options(int) override;
+	void action(int, int) override;
+private:
+	CgeneratorAtt att;
 };
 
+#endif

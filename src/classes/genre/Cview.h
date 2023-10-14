@@ -8,20 +8,17 @@ class Cview
 {
 public:
 	Cview(int,int);
-	virtual int showScreen();
+	void showScreen();
 	int nextMode();
 	virtual void options(int scr) = 0;
 protected:
 	Cproperties index;
-	CgeneratorAtt att;
-
 	int screen;
 	int exit;
 	std::string *MenuOptions;
 
 	void showMenuScreen(int,std::string*,int);
-	void action(int, int);
-	~Cview();
+	virtual void action(int, int) = 0;
 };
 
 #endif // !CVIEW_H

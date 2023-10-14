@@ -1,5 +1,6 @@
 #ifndef CGENERATORATT_H
 #define CGENERATORATT_H
+#include <string>
 
 class CgeneratorAtt
 {
