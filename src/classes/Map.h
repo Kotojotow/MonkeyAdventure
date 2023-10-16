@@ -2,11 +2,13 @@
 #define MAP_H
 #include "genre/CgeneratorAtt.h"
 #include "string"
-#define STARTBLOCK 0
+#include <iostream>
+
 class CModule {
 public:
 	CModule();
 	void insertValue(int v, int t);
+	void show();
 private:
 	int value;
 	int type;
@@ -30,8 +32,12 @@ public:
 	CModule grid[13][13];
 	CgeneratorAtt att;
 	void generate();
-
+	void Show();
 private:
 	int middle;
 };
+
+#define STARTBLOCK 0
+#define EXITBLOCK 100
+#define EXITBLOCKVALUE 50
 #endif // !GENERATOR_H
