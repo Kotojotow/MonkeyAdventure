@@ -1,9 +1,11 @@
 #include "Map.h"
 
-CModule::CModule(int Value, int Type) {
-	type = Type;
-	value = Value;
+CModule::CModule() {
+	type = 0;
+	value = 0;
 }
 
-int CModule::valueOf() { return value; }
-int CModule::typeOf() { return type; }
+void CModule::insertValue(int v, int t) {
+	value = v;
+	type = v;
+}

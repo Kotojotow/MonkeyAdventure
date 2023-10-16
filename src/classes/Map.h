@@ -1,22 +1,12 @@
 #ifndef MAP_H
 #define MAP_H
 #include "genre/CgeneratorAtt.h"
-
-class Map {
-public:
-	Map(CgeneratorAtt);
-private:
-	CgeneratorAtt gAtt;
-	CModule grid[7][7];
-
-	void generate();
-};
-
+#include "string"
+#define STARTBLOCK 0
 class CModule {
 public:
-	CModule(int,int);
-	int typeOf();
-	int valueOf();
+	CModule();
+	void insertValue(int v, int t);
 private:
 	int value;
 	int type;
@@ -30,5 +20,18 @@ public:
 	char checkCharacter();
 private:
 	char character;
+};
+
+class Map {
+public:
+	//Map(std::string);
+	Map(CgeneratorAtt);
+	int size;
+	CModule grid[13][13];
+	CgeneratorAtt att;
+	void generate();
+
+private:
+	int middle;
 };
 #endif // !GENERATOR_H
