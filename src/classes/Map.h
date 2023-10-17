@@ -7,7 +7,13 @@
 class CModule {
 public:
 	CModule();
-	void insertValue(int v, int t);
+	void StartBlock();
+	void NoobBlock();
+	void BlueBlock(int);
+	void GreenBlock(int);
+	void RedBlock(int);
+	void BronzeBlock(int);
+	void ExitBlock(int);
 	void show();
 private:
 	int value;
@@ -20,6 +26,7 @@ public:
 	void setCharacter(char);
 	void showBlock();
 	char checkCharacter();
+
 private:
 	char character;
 };
@@ -38,6 +45,10 @@ private:
 };
 
 #define STARTBLOCK 0
+#define NOOBBLOCK 1
+#define BLUEBLOCK 8
+#define GREENBLOCK 9
+#define REDBLOCK 10
+#define BRONZEBLOCK 30
 #define EXITBLOCK 100
-#define EXITBLOCKVALUE 50
 #endif // !GENERATOR_H
